@@ -1,0 +1,29 @@
+
+#Linux commands used for operations in SQL-Database
+
+sudo su -y
+yum install mysql 
+
+mysql -h <Endpoint> -P 3306 -u <admin> -p
+
+#Enter the password
+
+CREATE DATABASE <name of database eg. STDDB>;
+
+SHOW DATABASES;
+
+USE STDDB;
+
+CREATE TABLE IF NOT EXISTS students (
+ Std_id INT AUTO_INCREMENT,
+ firstname VARCHAR(255) NOT NULL,
+ lastname VARCHAR(255),
+ admin_date DATE,
+ description TEXT,
+ PRIMARY KEY (Std_id)
+ ) ENGINE=INNODB;
+SHOW TABLES;
+
+INSERT INTO students (firstname, lastname) VALUES ('akash' , 'neel');
+
+SELECT * FROM students
